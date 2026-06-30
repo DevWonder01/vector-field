@@ -4,8 +4,6 @@ A real-time, high-performance, and visually stunning interactive vector field si
 
 This sandbox allows you to visualize and interact with complex 2D vector fields. It simulates thousands of colorful particles flowing through dynamic, time-varying mathematical fields. 
 
-<video src="vector_field_2.mp4" width="100%" controls autoplay loop muted></video>
-
 ---
 
 ## Core Features
@@ -41,10 +39,14 @@ $$\mathbf{V}(x, y) = \left( \frac{\partial \psi}{\partial y}, -\frac{\partial \p
 We approximate these partial derivatives numerically via central differences:
 $$\frac{\partial \psi}{\partial x} \approx \frac{\psi(x + \epsilon, y) - \psi(x - \epsilon, y)}{2\epsilon}$$
 
+![Perlin Curl Field](perlin%20curl.png)
+
 ### 2. Electric Dipole
 Calculates forces acting from a source at $\mathbf{p}_{\text{src}}$ and a sink at $\mathbf{p}_{\text{snk}}$:
 $$\mathbf{V}(\mathbf{x}) = \frac{\mathbf{x} - \mathbf{p}_{\text{src}}}{\|\mathbf{x} - \mathbf{p}_{\text{src}}\|^3 + \delta} - \frac{\mathbf{x} - \mathbf{p}_{\text{snk}}}{\|\mathbf{x} - \mathbf{p}_{\text{snk}}\|^3 + \delta}$$
 *(where $\delta$ is a softening factor to prevent singularities).*
+
+![Electric Dipole Field](electric_dipole.png)
 
 ### 3. Custom Trig Flow
 Controlled via 8 independent coefficient sliders in the GUI:
